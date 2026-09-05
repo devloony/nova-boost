@@ -1,8 +1,0 @@
-{
-  "name":"nova-boost-miniapp",
-  "version":"2.0.0",
-  "private":true,
-  "main":"bot.js",
-  "scripts":{"start":"node bot.js"},
-  "dependencies":{"dotenv":"^16.4.7","express":"^5.1.0","node-telegram-bot-api":"^0.66.0"}
-}
