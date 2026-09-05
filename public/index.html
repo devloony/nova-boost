@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>NOVA BOOST</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <img src="logo.jpg" class="logo" alt="NOVA BOOST">
+      <div>
+        <div class="brand">NOVA BOOST</div>
+        <div class="subtitle">STANDOFF 2 BOOST</div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Главная -->
+      <section id="home" class="page active">
+        <div class="hero">
+          <div class="glow"></div>
+          <h1>БУСТ ЗВАНИЯ</h1>
+          <p>Поднимем ваше звание в Standoff 2 быстро и удобно.</p>
+        </div>
+
+        <div class="card">
+          <div class="step">
+            <span class="step-number">01</span>
+            <div>
+              <h3>Ваше звание</h3>
+              <p>Выберите текущее звание</p>
+            </div>
+          </div>
+
+          <div class="rank-grid" id="fromRanks"></div>
+        </div>
+
+        <div class="card">
+          <div class="step">
+            <span class="step-number">02</span>
+            <div>
+              <h3>Желаемое звание</h3>
+              <p>Выберите, до какого звания подняться</p>
+            </div>
+          </div>
+
+          <div class="rank-grid" id="toRanks"></div>
+        </div>
+
+        <div class="order-card">
+          <div>
+            <span class="label">ВАШ ЗАКАЗ</span>
+            <strong id="selection">Выберите два звания</strong>
+          </div>
+          <div class="price" id="price">— ₽</div>
+        </div>
+
+        <button class="primary-btn" id="orderBtn" disabled>
+          ЗАКАЗАТЬ БУСТ
+        </button>
+
+        <div id="message" class="message"></div>
+      </section>
+
+      <!-- Отзывы -->
+      <section id="reviews" class="page">
+        <div class="section-title">
+          <span>02</span>
+          <div>
+            <h2>ОТЗЫВЫ</h2>
+            <p>Отзывы наших клиентов</p>
+          </div>
+        </div>
+
+        <div id="reviewsList" class="reviews-list">
+          <div class="empty">
+            <div class="empty-icon">★</div>
+            <h3>Пока нет отзывов</h3>
+            <p>Здесь появятся отзывы, которые вы добавите позже.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Предложения -->
+      <section id="offers" class="page">
+        <div class="section-title">
+          <span>03</span>
+          <div>
+            <h2>ПРЕДЛОЖЕНИЯ</h2>
+            <p>Специальные предложения</p>
+          </div>
+        </div>
+
+        <div class="offer-placeholder">
+          <div class="offer-icon">⚡</div>
+          <h3>СКОРО</h3>
+          <p>Здесь будут ваши акции, скидки и специальные предложения.</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-page="home">
+        <span>⌂</span>
+        <small>Главная</small>
+      </button>
+      <button class="nav-item" data-page="reviews">
+        <span>★</span>
+        <small>Отзывы</small>
+      </button>
+      <button class="nav-item" data-page="offers">
+        <span>⚡</span>
+        <small>Предложения</small>
+      </button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
