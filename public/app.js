@@ -29,14 +29,14 @@ const fromSelectedText=$('fromSelectedText'), toSelectedText=$('toSelectedText')
 
 function haptic(type="selectionChanged"){ if(!tg?.HapticFeedback)return; if(type==='success'||type==='error')tg.HapticFeedback.notificationOccurred(type); else tg.HapticFeedback.impactOccurred('light'); }
 function rankByName(n){return ranks.find(r=>r.name===n)}
-function priceFor(){ if(fromRank===null||toRank===null)return null; const a=ranks.findIndex(r=>r.name===fromRank), b=ranks.findIndex(r=>r.name===toRank); if(b!==a+1)return null; return prices[mode][access][a]; }
+function priceFor(){ if(fromRank===null||toRank===null)return null; const a=ranks.findIndex(r=>r.name===fromRank), b=ranks.findIndex(r=>r.name===toRank); if(a<0||b<=a)return null; return prices[mode][access].slice(a,b).reduce((sum,p)=>[sum[0]+p[0],sum[1]+p[1],sum[2]+p[2]],[0,0,0]); }
 function renderOptions(container,type){
   container.innerHTML='';
   ranks.forEach((rank,index)=>{
     const button=document.createElement('button'); button.type='button'; button.className='rank-option';
     const selected=type==='from'?fromRank===rank.name:toRank===rank.name; if(selected)button.classList.add('selected');
     const fromIndex=fromRank?ranks.findIndex(r=>r.name===fromRank):-1;
-    if(type==='to' && fromIndex>=0 && index!==fromIndex+1){button.classList.add('disabled');button.disabled=true;}
+    if(type==='to' && fromIndex>=0 && index<=fromIndex){button.classList.add('disabled');button.disabled=true;}
     button.innerHTML=`<img src="${rank.image}" alt="${rank.name}"><span>${rank.name}</span>`;
     button.addEventListener('click',()=>{
       if(type==='from'){fromRank=rank.name; const i=ranks.findIndex(r=>r.name===fromRank); toRank=ranks[i+1]?.name||null;}
