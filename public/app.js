@@ -2,12 +2,12 @@ const tg = window.Telegram?.WebApp;
 if (tg) { tg.ready(); tg.expand(); }
 
 const ranks = [
-  { name: "Phoenix", image: "ranks/rank1.png" },
-  { name: "Ranger", image: "ranks/rank2.png" },
-  { name: "Champion", image: "ranks/rank3.png" },
-  { name: "Master", image: "ranks/rank4.png" },
-  { name: "Elite", image: "ranks/rank5.png" },
-  { name: "The Legend", image: "ranks/rank6.png" }
+  { name: "Phoenix", image: "ranks/rank1.png?v=3" },
+  { name: "Ranger", image: "ranks/rank2.png?v=3" },
+  { name: "Champion", image: "ranks/rank3.png?v=3" },
+  { name: "Master", image: "ranks/rank4.png?v=3" },
+  { name: "Elite", image: "ranks/rank5.png?v=3" },
+  { name: "The Legend", image: "ranks/rank6.png?v=3" }
 ];
 
 let fromRank = null;
